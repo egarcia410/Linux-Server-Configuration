@@ -362,11 +362,8 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
 
     >**Note**: [**postgresql**](https://www.postgresql.org/docs/9.2/static/auth-methods.html#AUTH-IDENT) You will be logged in automatically if everything is configured properly. `\q` to exit.
 
-<<<<<<< 6196f8ce7a2898032c08d28fbaa27b013c25f308
-#### 13. Install git, clone and set up Catalog App project.
-=======
+
 ##### 13. Install git, clone and set up FlaskApp App project.
->>>>>>> Updated project dependency installation, Added Description and Project Info
 ---
 
 Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04), [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
@@ -427,11 +424,8 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
 
     **Repeat** these steps for `lotsofmenus.py` and `__init__.py`
 
-<<<<<<< 6196f8ce7a2898032c08d28fbaa27b013c25f308
-#### 14. Set up virtual environment, install Flask, and Catalog App dependencies.
-=======
+
 ##### 14. Set up virtual environment, install Flask, and FlaskApp App dependencies.
->>>>>>> Updated project dependency installation, Added Description and Project Info
 ---
 
 Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
