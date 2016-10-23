@@ -185,7 +185,7 @@ Sources: [**2daygeek**](http://www.2daygeek.com/how-to-change-the-ssh-port-numbe
 
 * 7.5 Restart the SSH service so that it will use our new configuration.
 
-       $ service ssh restart
+        $ service ssh restart
 
 * 7.6 (Optional) Verify from **Local Machine** that new connections can be established successfully.
 
@@ -363,7 +363,7 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
     >**Note**: [**postgresql**](https://www.postgresql.org/docs/9.2/static/auth-methods.html#AUTH-IDENT) You will be logged in automatically if everything is configured properly. `\q` to exit.
 
 
-##### 13. Install git, clone and set up FlaskApp App project.
+#### 13. Install git, clone and set up FlaskApp App project.
 ---
 
 Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04), [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
@@ -425,7 +425,7 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
     **Repeat** these steps for `lotsofmenus.py` and `__init__.py`
 
 
-##### 14. Set up virtual environment, install Flask, and FlaskApp App dependencies.
+#### 14. Set up virtual environment, install Flask, and FlaskApp App dependencies.
 ---
 
 Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
