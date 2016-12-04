@@ -7,14 +7,14 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
 
 #### Important Project Information
 ---
-Public IP Address: 35.160.64.237
+Public IP Address: 35.160.40.188
 
 SSH port: 2200
 
-Application URL: [http://ec2-35-160-64-237.us-west-2.compute.amazonaws.com/](http://ec2-35-160-64-237.us-west-2.compute.amazonaws.com/)
+Application URL: [http://ec2-35-160-40-188.us-west-2.compute.amazonaws.com/](http://ec2-35-160-40-188.us-west-2.compute.amazonaws.com/)
 
 
-#### 1. Launch your Virtual Machine with your Udacity account and log in. You can manage your virtual server [here](https://www.udacity.com/account#!/development_environment)
+##### 1. Launch your Virtual Machine with your Udacity account and log in. You can manage your virtual server [here](https://www.udacity.com/account#!/development_environment)
 ---
 
 * 1.1 Download Private Key
@@ -33,11 +33,11 @@ Application URL: [http://ec2-35-160-64-237.us-west-2.compute.amazonaws.com/](htt
 
 * 1.6 Type `yes`
 
-* 1.7 You will now be logged in as the root user in the Virtual Machine.
+* 1.7 You will now be logged in as the root user in the Virtual Machine. For example:
 
         root@ip-10-20-43-32:~#
 
-#### 2. Create a new user named **grader**.
+##### 2. Create a new user named **grader**.
 ---
 
 Sources: [**Digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart),
@@ -63,7 +63,7 @@ Sources: [**Digitalocean**](https://www.digitalocean.com/community/tutorials/how
 
         Is the information correct? [Y/n]
 
-#### 3. Grant **grader** user sudo permissions.
+##### 3. Grant **grader** user sudo permissions.
 ---
 
 Sources: [**askubuntu**](http://askubuntu.com/questions/7477/how-can-i-add-a-new-user-as-sudoer-using-the-command-line), [**ubuntu**](https://help.ubuntu.com/community/RootSudo#Allowing_other_users_to_run_sudo)
@@ -75,7 +75,7 @@ Sources: [**askubuntu**](http://askubuntu.com/questions/7477/how-can-i-add-a-new
         Adding user grader to group sudo
         Done.
 
-#### 4. Update all currently installed packages.
+##### 4. Update all currently installed packages.
 ---
 
 Sources: [**askubuntu**](http://askubuntu.com/questions/196768/how-to-install-updates-via-command-line), [**unix.stackexchange**](http://unix.stackexchange.com/questions/113732/a-new-version-of-configuration-file-etc-default-grub-is-available-but-the-vers)
@@ -98,7 +98,7 @@ Sources: [**askubuntu**](http://askubuntu.com/questions/196768/how-to-install-up
 
     Select: `install the package maintainer's version`
 
-#### 5. Configure the local timezone to UTC.
+##### 5. Configure the local timezone to UTC.
 ---
 
 Sources: [**askubuntu**](http://askubuntu.com/questions/138423/how-do-i-change-my-timezone-to-utc-gmt)
@@ -111,7 +111,7 @@ Sources: [**askubuntu**](http://askubuntu.com/questions/138423/how-do-i-change-m
 
 * 5.3 Select time zone `UTC`.
 
-#### 6. Add public key authentication.
+##### 6. Add public key authentication.
 ---
 
 Sources: [**Digitalocean**](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04)
@@ -161,7 +161,7 @@ Sources: [**Digitalocean**](https://www.digitalocean.com/community/tutorials/ini
 
         $ chmod 600 .ssh/authorized_keys
 
-#### 7. Change the SSH port from 22 to 2200 and disable root access.
+##### 7. Change the SSH port from 22 to 2200 and disable root access.
 ---
 
 Sources: [**2daygeek**](http://www.2daygeek.com/how-to-change-the-ssh-port-number/), [**superuser**](http://superuser.com/questions/161609/can-someone-explain-the-passwordauthentication-in-the-etc-ssh-sshd-config-fil), [**linuxlookup**](http://www.linuxlookup.com/howto/change_default_ssh_port), [**digitalocean**](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04)
@@ -185,16 +185,16 @@ Sources: [**2daygeek**](http://www.2daygeek.com/how-to-change-the-ssh-port-numbe
 
 * 7.5 Restart the SSH service so that it will use our new configuration.
 
-        $ service ssh restart
+       $ service ssh restart
 
 * 7.6 (Optional) Verify from **Local Machine** that new connections can be established successfully.
 
-        $ ssh grader@35.160.64.237
+        $ ssh grader@YOUR-PUBLIC-IP-ADDRESS
 
 
     >**Note**: You should be logged in as **grader**, try various commands, and exit when satisfied.
 
-#### 8. Configure the Uncomplicated Firewall (UFW)
+##### 8. Configure the Uncomplicated Firewall (UFW)
 ---
 
 Sources: [**ubuntu**](https://help.ubuntu.com/community/UFW), [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04)
@@ -215,7 +215,7 @@ Sources: [**ubuntu**](https://help.ubuntu.com/community/UFW), [**digitalocean**]
         Command may disrupt existing ssh connections. Proceed with operation (y|n)?
 
 
-#### 9. (Optional) Received **sudo: unable to resolve host ip-10-20-43-32** error?
+##### 9. (Optional) Received **sudo: unable to resolve host ip-10-20-43-32** error?
 ---
 
 Sources: [**aws**](https://forums.aws.amazon.com/message.jspa?messageID=495274)
@@ -224,10 +224,10 @@ Sources: [**aws**](https://forums.aws.amazon.com/message.jspa?messageID=495274)
 
         $ sudo nano /etc/hosts
 
-* 9.2 Add `127.0.1.1 ip-10-20-43-32` to the file, should look similar to below:
+* 9.2 Add `127.0.1.1 ip-10-20-54-68` to the file, should look similar to below:
 
         127.0.0.1 localhost
-        127.0.1.1 ip-10-20-43-32  #Add this line
+        127.0.1.1 ip-10-20-54-68  #Add this line
 
         # The following lines are desirable for IPv6 capable hosts
         ::1 ip6-localhost ip6-loopback
@@ -237,11 +237,11 @@ Sources: [**aws**](https://forums.aws.amazon.com/message.jspa?messageID=495274)
         ff02::2 ip6-allrouters
         ff02::3 ip6-allhosts
 
-    >**Note**: `ip-10-20-43-32` your machine name may be different.
+    >**Note**: `ip-10-20-54-68` your machine name may be different.
 
 * 9.3 `CTRL-X` to exit, save changes, and confirm file name.
 
-#### 10. Install and configure Apache to serve a Python mod_wsgi application.
+##### 10. Install and configure Apache to serve a Python mod_wsgi application.
 ---
 
 Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu), [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
@@ -254,7 +254,7 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
 
         Do you want to continue? [Y/n] y
 
-* 10.3 (Optional) To check if Apache is installed, direct your browser to your server’s IP address (eg. http://35.160.64.237/). The page should display the Apache2 Ubuntu Default Page.
+* 10.3 (Optional) To check if Apache is installed, direct your browser to your server’s IP address (eg. http://35.160.40.188/). The page should display the Apache2 Ubuntu Default Page.
 
 
 * 10.4 Install mod_wsgi.
@@ -292,7 +292,7 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
 
         $ sudo service apache2 restart
 
-#### 11. Install and configure PostgreSQL.
+##### 11. Install and configure PostgreSQL.
 ---
 
 Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04), [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps) [**postgresql**](https://www.postgresql.org/docs/9.2/static/auth-methods.html#AUTH-IDENT), [**postgresql**](https://www.postgresql.org/docs/9.2/static/app-createuser.html), [**postgresql**](https://www.postgresql.org/docs/9.0/static/sql-createdatabase.html), [**postgresql**](https://www.postgresql.org/docs/9.1/static/manage-ag-createdb.html), [**stackoverflow**](http://stackoverflow.com/questions/10861260/how-to-create-user-for-a-db-in-postgresql)
@@ -315,13 +315,13 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
 
         $ psql
 
-* 11.5 Create user *FlaskApp* with a password.
+* 11.5 Create user *catalog* with a password.
 
-        postgres-# CREATE USER FlaskApp WITH PASSWORD 'password';
+        postgres-# CREATE USER catalog WITH PASSWORD 'password';
 
-* 11.6 Create database named *FlaskApp* where user *FlaskApp* can configure and manage.
+* 11.6 Create database named *catalog* where user *catalog* can configure and manage.
 
-        postgres-# CREATE DATABASE FlaskApp OWNER FlaskApp;
+        postgres-# CREATE DATABASE catalog OWNER catalog;
 
 * 11.7 Exit the PostgreSQL shell.
 
@@ -335,10 +335,10 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
 
 * 11.9 Create a Linux user with the same name as the Postgres role and database in order to log in with ident based authentication. Follow steps 2.2 - 2.4.
 
-        $ sudo adduser FlaskApp
+        $ sudo adduser catalog
 
 
-#### 12. (Optional) Check remote connections and log in with ident authentication.
+##### 12. (Optional) Check remote connections and log in with ident authentication.
 ---
 
 Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps), [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04)
@@ -358,12 +358,11 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
 
 * 12.3 log in with ident authentication.
 
-        $ sudo -u FlaskApp psql
+        $ sudo -u catalog psql
 
     >**Note**: [**postgresql**](https://www.postgresql.org/docs/9.2/static/auth-methods.html#AUTH-IDENT) You will be logged in automatically if everything is configured properly. `\q` to exit.
 
-
-#### 13. Install git, clone and set up FlaskApp App project.
+##### 13. Install git, clone and set up FlaskApp App project.
 ---
 
 Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-14-04), [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
@@ -382,27 +381,27 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
 
 * 13.5 Create the application directory.
 
-        $ sudo mkdir FlaskApp
+        $ sudo mkdir Catalog
 
-* 13.6 Change ownership (both user and group) of all files and directories inside of *FlaskApp*.
+* 13.6 Change ownership (both user and group) of all files and directories inside of *Catalog*.
 
-        $ sudo chown -R grader:grader FlaskApp
+        $ sudo chown -R grader:grader Catalog
 
     >**Note**: [**askubuntu**](http://askubuntu.com/questions/6723/change-folder-permissions-and-ownership) Now the **grader** user can git clone into this folder.
 
-* 13.7 Move inside the *FlaskApp* directory.
+* 13.7 Move inside the *Catalog* directory.
 
-        $ cd FlaskApp
+        $ cd Catalog
 
-* 13.8 Clone the FlaskApp App to the Virtual Machine.
+* 13.8 Clone the Catalog App to the Virtual Machine.
 
-        $ git clone https://github.com/egarcia410/FlaskApp.git FlaskApp
+        $ git clone https://github.com/egarcia410/catalog.git Catalog
 
-    >**Note**: Creates another **FlaskApp** folder with the cloned project.
+    >**Note**: Creates another **Catalog** folder with the cloned project.
 
-* 13.9 Move inside the inner *FlaskApp* directory.
+* 13.9 Move inside the inner *Catalog* directory.
 
-        $ cd FlaskApp
+        $ cd Catalog
 
 * 13.10 Rename `project.py` to `__init__.py`
 
@@ -418,14 +417,13 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
 
     Add this line:
 
-        engine = create_engine('postgresql://FlaskApp:password@localhost/FlaskApp')
+        engine = create_engine('postgresql://catalog:password@localhost/catalog')
 
     Save changes and exit.
 
     **Repeat** these steps for `lotsofmenus.py` and `__init__.py`
 
-
-#### 14. Set up virtual environment, install Flask, and FlaskApp App dependencies.
+##### 14. Set up virtual environment, install Flask, and Item Catalog App dependencies.
 ---
 
 Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
@@ -456,16 +454,17 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
 
 * 14.7 Install Flask and dependencies.
 
-        (venv) pip install Flask
+        (venv) sudo pip install Flask
         (venv) pip install requests
         (venv) pip install httplib2
-        (venv) pip install sqlalchemy
-        (venv) pip install oath2
-        (venv) pip install oath2client
+        (venv) sudo pip install sqlalchemy
+        (venv) pip install oauth2
+        (venv) pip install --upgrade oauth2client
 
 * 14.8 Install dependencies for psycopg2.
 
-        (venv) sudo apt-get install build-dep python-psycopg2
+        (venv) sudo apt-get install python-psycopg2
+        (venv) sudo apt-get install libpq-dev
         (venv) pip install psycopg2
 
     >**Note**: [**stackoverflow**](http://stackoverflow.com/questions/12906351/importerror-no-module-named-psycopg2)
@@ -481,32 +480,36 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
         * Debugger is active!
         * Debugger pin code: 138-920-380
 
+<!-- * 19.10 Add items to the database.
+
+        (venv) python lotsofmenus.py
+ -->
 * 14.10 Exit the virtual environment.
 
         (venv) deactivate
 
-#### 15 Configure and enable a new virtual host.
+##### 15 Configure and enable a new virtual host.
 ---
 
 Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps), [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-centos-6)
 
 * 15.1 Open this file:
 
-        $ sudo nano /etc/apache2/sites-available/FlaskApp.conf
+        $ sudo nano /etc/apache2/sites-available/Catalog.conf
 
 * 15.2 Add the following lines of code to the file to configure the virtual host.
 
         <VirtualHost *:80>
-                ServerName 35.160.64.237
+                ServerName 35.160.40.188
                 ServerAdmin admin@example.com
-                ServerAlias ec2-35-160-64-237.us-west-2.compute.amazonaws.com
-                WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
-                <Directory /var/www/FlaskApp/FlaskApp/>
+                ServerAlias ec2-35-160-40-188.us-west-2.compute.amazonaws.com
+                WSGIScriptAlias / /var/www/Catalog/Catalog.wsgi
+                <Directory /var/www/Catalog/Catalog/>
                     Order allow,deny
                     Allow from all
                 </Directory>
-                Alias /static /var/www/FlaskApp/FlaskApp/static
-                <Directory /var/www/FlaskApp/FlaskApp/static/>
+                Alias /static /var/www/Catalog/Catalog/static
+                <Directory /var/www/Catalog/Catalog/static/>
                     Order allow,deny
                     Allow from all
                 </Directory>
@@ -521,30 +524,30 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
 
 * 15.3 Enable the virtual host.
 
-        $ sudo a2ensite FlaskApp
+        $ sudo a2ensite Catalog
 
-#### 16. Create the .wsgi file.
+##### 16. Create the .wsgi file.
 ---
 
 Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
 
-* 16.1 Move to the /var/www/FlaskApp directory.
+* 16.1 Move to the /var/www/Catalog directory.
 
-        $ cd /var/www/FlaskApp
+        $ cd /var/www/Catalog
 
-* 16.2 Create a file named *flaskapp.wsgi*
+* 16.2 Create a file named *catalog.wsgi*
 
-        $ sudo nano flaskapp.wsgi
+        $ sudo nano catalog.wsgi
 
-* 16.3 Add the following lines of code to the *flaskapp.wsgi* file:
+* 16.3 Add the following lines of code to the *catalog.wsgi* file:
 
         #!/usr/bin/python
         import sys
         import logging
         logging.basicConfig(stream=sys.stderr)
-        sys.path.insert(0,"/var/www/FlaskApp/")
+        sys.path.insert(0,"/var/www/Catalog/")
 
-        from FlaskApp import app as application
+        from Catalog import app as application
         application.secret_key = 'Add_your_secret_key'
 
     Save and exit the file.
@@ -552,6 +555,8 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
 * 16.4 Restart Apache.
 
         $ sudo service apache2 restart
+
+>**Note**: Check for errors `sudo tail -20 /var/log/apache2/error.log`
 
 
 
