@@ -7,11 +7,11 @@ Take a baseline installation of a Linux distribution on a virtual machine and pr
 
 #### Important Project Information
 ---
-Public IP Address: 35.165.249.98
+Public IP Address: 35.165.71.108
 
 SSH port: 2200
 
-Application URL: [http://ec2-35-165-249-98.us-west-2.compute.amazonaws.com/](http://ec2-35-165-249-98.us-west-2.compute.amazonaws.com/)
+Application URL: [http://ec2-35-165-71-108.us-west-2.compute.amazonaws.com/](http://ec2-35-165-71-108.us-west-2.compute.amazonaws.com/)
 
 
 #### 1. Launch your Virtual Machine with your Udacity account and log in. You can manage your virtual server [here](https://www.udacity.com/account#!/development_environment)
@@ -202,6 +202,7 @@ Sources: [**ubuntu**](https://help.ubuntu.com/community/UFW), [**digitalocean**]
 * 8.1 Allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123).
 
         $ sudo ufw allow ssh
+        $ sudo ufw deny 22
         $ sudo ufw allow 2200/tcp
         $ sudo ufw allow 80/tcp
         $ sudo ufw allow 123/tcp
@@ -254,7 +255,7 @@ Sources: [**digitalocean**](https://www.digitalocean.com/community/tutorials/how
 
         Do you want to continue? [Y/n] y
 
-* 10.3 (Optional) To check if Apache is installed, direct your browser to your server’s IP address (eg. http://35.163.49.226/). The page should display the Apache2 Ubuntu Default Page.
+* 10.3 (Optional) To check if Apache is installed, direct your browser to your server’s IP address (eg. http://35.165.71.108/). The page should display the Apache2 Ubuntu Default Page.
 
 
 * 10.4 Install mod_wsgi.
